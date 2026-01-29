@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <script src="./react-basics.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      const button = document.createElement('btn-close');
+      const click = <button>click me</button>;
+      function myFunction(){
+        console.log("working");
+      }
+      //how to seperate html js 
+      const div = (
+        <div>
+          <p>This is how we apply multiple elements in react</p>
+          <button onClick='myFunction()'>click</button>
+        </div>
+      );
+
+      let shippingCost = 5;
+      let productPrice = 20;
+
+      const div2 = (
+        <div>
+          <p>Product cost: ${productPrice}</p>
+          <p>Shipping cost: ${shippingCost}</p>
+          <p>Total: ${shippingCost+productPrice}</p>
+          <button>Place your order</button>
+        </div>
+      );
+      const container = document.querySelector('.js-container');
+      // ReactDOM.createRoot(container).render('Welcome to SuperSimpleDev React Course');
+      ReactDOM.createRoot(container).render(div2);
+      
+    </script>
+  </body>
+</html>

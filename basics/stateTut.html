@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <script src="./react-basics.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      function Count({count, setCount, label, setLabel}){
+
+        function changeLabel(){
+          setCount(++count);
+          count === 1 ? setLabel('times') : setLabel('time');
+        }
+        return (
+          <>
+            <button onClick={changeLabel}>clicked {count} {label}</button>
+          </>
+        );
+      }
+
+      function App(){
+        let [count, setCount] = React.useState(0);
+        let [label, setLabel] = React.useState('time');
+        
+        function resetCount(){
+          setCount(0);
+          setLabel('time');
+        }
+
+        return (
+          <>
+            <Count 
+              count={count} 
+              setCount={setCount} 
+              label={label} 
+              setLabel={setLabel}
+            />
+            <Count 
+              count={count} 
+              setCount={setCount} 
+              label={label} 
+              setLabel={setLabel}
+            />
+            <button onClick={resetCount}>Reset</button>
+          </>
+        );
+      }
+
+      // babel need to convert jsx into js
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+      
+    </script>
+  </body>
+</html>
