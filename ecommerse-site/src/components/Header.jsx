@@ -1,10 +1,9 @@
-import {Link} from 'react-router'
-import './header.css'
+import {Link} from 'react-router';
+import { productQuantity } from '../utils/productQuantity';
+import './header.css';
 
 export function Header({cart}) {
-  let totalCount = 0;
-  cart.forEach((item) => totalCount += item.quantity);
-
+  console.log("cart: ", cart)
   return (
     <div className="header">
       <div className="left-section">
@@ -29,7 +28,7 @@ export function Header({cart}) {
 
         <Link className="cart-link header-link" to="/checkout">
           <img className="cart-icon" src="images/icons/cart-icon.png" />
-          <div className="cart-quantity">{totalCount}</div>
+          <div className="cart-quantity">{productQuantity(cart)}</div>
           <div className="cart-text">Cart</div>
         </Link>
       </div>
