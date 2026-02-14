@@ -26,6 +26,12 @@
   width: 200px;
 }
 
+.checkout-header .header-title{
+  color: #146903;
+  font-size: larger;
+  text-decoration: none;
+}
+
 .checkout-header .logo {
   height: 26px;
   margin-top: 0px;
