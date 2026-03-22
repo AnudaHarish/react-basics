@@ -8,7 +8,7 @@ export function Header({cart}) {
     <div className="header">
       <div className="left-section">
         <Link to="/" className="header-link header-title">
-          OnlineCart
+          OnlineShop
         </Link>
       </div>
 

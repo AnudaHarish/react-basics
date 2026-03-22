@@ -11,7 +11,10 @@ export default defineConfig({
       },
       '/image': {
         target: 'http://localhost:3000'
-      }
+      },
     }
+  },
+  build: {
+    outDir: '../ecommerce-backend/dist'
   }
 })
